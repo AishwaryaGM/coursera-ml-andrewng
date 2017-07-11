@@ -1,0 +1,1025 @@
+Last login: Wed Jul  5 21:12:12 on ttys001
+aishwaryagm@AishwaryaGM:~$ octave-cli
+GNU Octave, version 3.8.0
+Copyright (C) 2013 John W. Eaton and others.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-apple-darwin13.0.0".
+
+Additional information about Octave is available at http://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit http://www.octave.org/get-involved.html
+
+Read http://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+octave:1> 5+6
+ans =  11
+octave:2> 3-2
+ans =  1
+octave:3> 5*8
+ans =  40
+octave:4> 1/2
+ans =  0.50000
+octave:5> 2^6
+ans =  64
+octave:6> 1 == 2   %false
+ans = 0
+octave:7> 1 ~= 2   %true
+ans =  1
+octave:8> 1 && 0    %AND
+ans = 0
+octave:9> 1 || 0   %OR
+ans =  1
+octave:10> xor(1,0)
+ans =  1
+octave:11> a = 3
+a =  3
+octave:12> a = 3;    %semicolon suppresses output
+octave:13> a
+a =  3
+octave:14> b = 'hi';
+octave:15> b
+b = hi
+octave:16> c = (3>=1);
+octave:17> c
+c =  1
+octave:18> a = pi;
+octave:19> a
+a =  3.1416
+octave:20> disp(a);
+ 3.1416
+octave:21> disp(sprintf('2 decimals: %0.2f', a))
+2 decimals: 3.14
+octave:22> disp(sprintf('6 decimals: %0.6f', a))
+6 decimals: 3.141593
+octave:23> a
+a =  3.1416
+octave:24> format long
+octave:25> a
+a =  3.14159265358979
+octave:26> format short
+octave:27> a
+a =  3.1416
+octave:28> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:29> A = [1 2;
+> 3 4;
+> 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:30> v = [1 2 3]
+v =
+
+   1   2   3
+
+octave:31> v = [1; 2; 3]
+v =
+
+   1
+   2
+   3
+
+octave:32> v = 1:0.1:2
+v =
+
+ Columns 1 through 5:
+
+    1.0000    1.1000    1.2000    1.3000    1.4000
+
+ Columns 6 through 10:
+
+    1.5000    1.6000    1.7000    1.8000    1.9000
+
+ Column 11:
+
+    2.0000
+
+octave:33> v = 1:6
+v =
+
+   1   2   3   4   5   6
+
+octave:34> ones(2,3)
+ans =
+
+   1   1   1
+   1   1   1
+
+octave:35> c = 2*ones(2,3)
+c =
+
+   2   2   2
+   2   2   2
+
+octave:36> C = [2 2 2; 2 2 2]
+C =
+
+   2   2   2
+   2   2   2
+
+octave:37> w = ones(1,3)
+w =
+
+   1   1   1
+
+octave:38> w = zeros(1,3)
+w =
+
+   0   0   0
+
+octave:39> w = rand(1,3)
+w =
+
+   0.93032   0.88716   0.90563
+
+octave:40> rand(3,3)
+ans =
+
+   0.109102   0.038955   0.101673
+   0.777873   0.463751   0.783997
+   0.231838   0.370921   0.569279
+
+octave:41> w = randn(1,3)
+w =
+
+   0.22779   1.06498   2.42717
+
+octave:42> w = -6 + sqrt(10)*(rand(1.10000))
+w = -5.1127
+octave:43> w = -6 + sqrt(10)*(rand(1,10000))
+w =
+
+ Columns 1 through 6:
+
+  -3.8142  -3.1161  -3.6563  -3.5265  -5.7841  -3.7446
+
+ Columns 7 through 12:
+
+  -4.3630  -4.6666  -5.1966  -3.2102  -5.2836  -3.1183
+
+ Columns 13 through 18:
+
+  -5.2816  -4.1230  -5.3136  -3.7003  -5.1175  -2.9869
+
+ Columns 19 through 24:
+
+  -4.6772  -4.7720  -3.9234  -5.8613  -5.6006  -4.1654
+
+ Columns 25 through 30:
+
+  -3.8317  -2.8874  -3.2989  -4.2536  -4.0182  -3.7694
+
+ Columns 31 through 36:
+
+  -5.5374  -5.6006  -5.6073  -5.9070  -3.9558  -4.1274
+
+ Columns 37 through 42:
+
+  -4.0893  -3.6749  -5.0712  -3.7182  -3.4962  -5.7072
+
+ Columns 43 through 48:
+
+  -3.3271  -5.6537  -5.0193  -4.8884  -3.1226  -4.6380
+
+ Columns 49 through 54:
+
+  -5.4253  -3.6856  -4.4251  -3.0119  -4.5477  -5.9211
+
+ Columns 55 through 60:
+
+  -4.9971  -5.4778  -3.9242  -5.2811  -4.6348  -5.8821
+
+ Columns 61 through 66:
+
+  -2.8463  -3.2498  -4.6234  -3.9650  -4.4992  -4.6905
+
+ Columns 67 through 72:
+
+  -5.9910  -5.5515  -4.7405  -4.9588  -3.0501  -3.1395
+
+ Columns 73 through 78:
+
+  -3.9513  -4.2021  -3.8322  -5.7774  -5.7912  -4.6237
+
+ Columns 79 through 84:
+warning: broken pipe
+octave:44> hist(w)
+
+gnuplot> set terminal aqua enhanced title "Figure 1" size 560 420  font "*,6" dashlength 1
+                      ^
+         line 0: unknown or ambiguous terminal type; type just 'set terminal' for a list
+
+octave:45> w = -6 + sqrt(10)*(rand(1,10000))
+w =
+
+ Columns 1 through 6:
+
+  -4.1642  -4.6983  -3.5173  -3.4309  -3.9870  -3.6740
+
+ Columns 7 through 12:
+
+  -3.8904  -3.3096  -3.1670  -4.6281  -2.9138  -5.6922
+
+ Columns 13 through 18:
+
+  -4.0201  -4.5894  -4.6045  -4.6901  -3.1507  -3.0610
+
+ Columns 19 through 24:
+
+  -3.6735  -3.3991  -5.9511  -5.0548  -3.5763  -4.7608
+
+ Columns 25 through 30:
+
+  -4.4499  -4.0724  -5.1706  -3.7864  -5.2573  -5.8597
+
+ Columns 31 through 36:
+
+  -4.4404  -3.4949  -4.1540  -5.1322  -5.4139  -2.8713
+
+ Columns 37 through 42:
+
+  -3.3572  -3.0837  -5.4797  -4.5798  -5.4806  -5.4530
+
+ Columns 43 through 48:
+
+  -5.0030  -5.1755  -5.4810  -4.3704  -5.9439  -3.8533
+
+ Columns 49 through 54:
+
+  -4.2162  -3.4204  -4.0649  -4.1989  -4.8562  -3.3505
+
+ Columns 55 through 60:
+
+  -3.7571  -5.2505  -5.6908  -4.3227  -5.8156  -4.6016
+
+ Columns 61 through 66:
+
+  -4.0374  -3.2522  -4.9673  -5.1242  -5.4203  -4.0345
+
+ Columns 67 through 72:
+
+  -5.8469  -3.0635  -4.6493  -4.4605  -5.6341  -3.8244
+
+ Columns 73 through 78:
+
+  -5.8033  -5.1386  -3.5024  -3.8243  -4.7876  -4.6685
+
+ Columns 79 through 84:
+warning: broken pipe
+octave:46> w = -6 + sqrt(10)*(randn(1,10000))
+w =
+
+ Columns 1 through 4:
+
+  -6.8837e+00  -2.5922e+00  -8.8514e+00  -7.5894e+00
+
+ Columns 5 through 8:
+
+  -4.2271e+00  -1.8674e-01  -2.8619e+00  -5.6159e+00
+
+ Columns 9 through 12:
+
+  -8.8999e+00  -3.6227e+00  -2.7716e+00  -1.2254e+01
+
+ Columns 13 through 16:
+
+  -4.4529e+00  -7.6156e+00  -7.6806e+00  -5.5717e+00
+
+ Columns 17 through 20:
+
+  -5.3079e+00  -1.8112e+00  -3.8370e+00  -4.4058e+00
+
+ Columns 21 through 24:
+
+  -5.6226e+00  -2.4227e+00  -1.1624e+01  -3.3552e+00
+
+ Columns 25 through 28:
+
+  -5.4594e+00  -9.8362e+00  -5.1715e-01  -4.1946e+00
+
+ Columns 29 through 32:
+
+  -4.2480e+00  -5.0193e+00  -3.8080e+00  -9.7672e+00
+
+ Columns 33 through 36:
+
+   3.0732e+00  -4.4257e+00  -8.1934e+00  -5.9522e+00
+
+ Columns 37 through 40:
+
+  -7.0479e+00  -9.3749e+00  -2.8354e+00  -1.1133e+01
+
+ Columns 41 through 44:
+
+  -4.5916e+00  -4.7501e+00  -1.0515e+01  -5.2629e+00
+
+ Columns 45 through 48:
+
+  -4.5940e+00  -1.6637e-02  -7.3006e+00  -2.3436e+00
+
+ Columns 49 through 52:
+
+  -3.7974e+00  -5.8243e+00  -5.2794e+00  -1.1416e+01
+
+ Columns 53 through 56:
+warning: broken pipe
+octave:47> hist(w)
+
+gnuplot> set terminal aqua enhanced title "Figure 1"  font "*,6" dashlength 1
+                      ^
+         line 0: unknown or ambiguous terminal type; type just 'set terminal' for a list
+
+octave:48> w = -6 + sqrt(10)*(randn(1,10000));
+octave:49> hist(w)
+
+gnuplot> set terminal aqua enhanced title "Figure 1"  font "*,6" dashlength 1
+                      ^
+         line 0: unknown or ambiguous terminal type; type just 'set terminal' for a list
+
+octave:50> setenv("GNUTERM","qt")
+octave:51> hist(w)
+octave:52> hist(w,50)
+octave:53> Qt terminal communication error: select() error 9 Bad file descriptor
+
+octave:53> eye(4)
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0
+   0   1   0   0
+   0   0   1   0
+   0   0   0   1
+
+octave:54> I  = eye(6)
+I =
+
+Diagonal Matrix
+
+   1   0   0   0   0   0
+   0   1   0   0   0   0
+   0   0   1   0   0   0
+   0   0   0   1   0   0
+   0   0   0   0   1   0
+   0   0   0   0   0   1
+
+octave:55> help eye
+'eye' is a built-in function from the file libinterp/corefcn/data.cc
+
+ -- Built-in Function:  eye (N)
+ -- Built-in Function:  eye (M, N)
+ -- Built-in Function:  eye ([M N])
+ -- Built-in Function:  eye (..., CLASS)
+     Return an identity matrix.  If invoked with a single scalar
+     argument N, return a square NxN identity matrix.  If supplied two
+     scalar arguments (M, N), `eye' takes them to be the number of rows
+     and columns.  If given a vector with two elements, `eye' uses the
+     values of the elements as the number of rows and columns,
+     respectively.  For example:
+
+          eye (3)
+           =>  1  0  0
+               0  1  0
+               0  0  1
+
+     The following expressions all produce the same result:
+
+          eye (2)
+          ==
+          eye (2, 2)
+          ==
+          eye (size ([1, 2; 3, 4])
+
+     The optional argument CLASS, allows `eye' to return an array of
+     the specified type, like
+
+          val = zeros (n,m, "uint8")
+
+     Calling `eye' with no arguments is equivalent to calling it with
+     an argument of 1.  Any negative dimensions are treated as zero.
+     These odd definitions are for compatibility with MATLAB.
+
+     See also: speye, ones, zeros.
+
+
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the octave:56> A 
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:57> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:58> size(A)
+ans =
+
+   3   2
+
+octave:59> sz = size(A)
+sz =
+
+   3   2
+
+octave:60> size(sz)
+ans =
+
+   1   2
+
+octave:61> size(A,1)
+ans =  3
+octave:62> size(A,2)
+ans =  2
+octave:63> v = [1 2 3 4]
+v =
+
+   1   2   3   4
+
+octave:64> length(v)
+ans =  4
+octave:65> length(A)
+ans =  3
+octave:66> length(A)   %length of the longest dimension
+ans =  3
+octave:67> length([1;2;3;4;5])
+ans =  5
+octave:68> pwd
+ans = /Users/aishwaryagm
+octave:69> ls
+Applications		Music
+Desktop			Pictures
+Documents		Public
+Downloads		distribute_setup.py
+Library			get-pip.py
+Movies			octave-workspace
+octave:70> cd Desktop/
+octave:71> ls
+all			ex1data1 copy.txt
+octave:72> load data.txt
+octave:73> who
+Variables in the current scope:
+
+A     I     ans   c     sz    w
+C     a     b     data  v
+
+octave:74> data
+data =
+
+    6.11010   17.59200
+    5.52770    9.13020
+    8.51860   13.66200
+    7.00320   11.85400
+    5.85980    6.82330
+    8.38290   11.88600
+    7.47640    4.34830
+    8.57810   12.00000
+    6.48620    6.59870
+    5.05460    3.81660
+    5.71070    3.25220
+   14.16400   15.50500
+    5.73400    3.15510
+    8.40840    7.22580
+    5.64070    0.71618
+    5.37940    3.51290
+    6.36540    5.30480
+    5.13010    0.56077
+    6.42960    3.65180
+    7.07080    5.38930
+    6.18910    3.13860
+   20.27000   21.76700
+    5.49010    4.26300
+    6.32610    5.18750
+    5.56490    3.08250
+   18.94500   22.63800
+   12.82800   13.50100
+   10.95700    7.04670
+   13.17600   14.69200
+   22.20300   24.14700
+    5.25240   -1.22000
+    6.58940    5.99660
+    9.24820   12.13400
+    5.89180    1.84950
+    8.21110    6.54260
+    7.93340    4.56230
+    8.09590    4.11640
+    5.60630    3.39280
+   12.83600   10.11700
+    6.35340    5.49740
+    5.40690    0.55657
+    6.88250    3.91150
+   11.70800    5.38540
+    5.77370    2.44060
+    7.82470    6.73180
+    7.09310    1.04630
+    5.07020    5.13370
+    5.80140    1.84400
+   11.70000    8.00430
+    5.54160    1.01790
+    7.54020    6.75040
+    5.30770    1.83960
+    7.42390    4.28850
+octave:75> size(data)
+ans =
+
+   97    2
+
+octave:76> who
+Variables in the current scope:
+
+A     I     ans   c     sz    w
+C     a     b     data  v
+
+octave:77> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  ===== 
+        A           3x2                         48  double
+        C           2x3                         48  double
+        I           6x6                         48  double
+        a           1x1                          8  double
+        ans         1x2                         16  double
+        b           1x2                          2  char
+        c           2x3                         48  double
+        data       97x2                       1552  double
+        sz          1x2                         16  double
+        v           1x4                         32  double
+        w           1x10000                  80000  double
+
+Total is 10259 elements using 81818 bytes
+
+octave:78> clear w
+octave:79> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  ===== 
+        A           3x2                         48  double
+        C           2x3                         48  double
+        I           6x6                         48  double
+        a           1x1                          8  double
+        ans         1x2                         16  double
+        b           1x2                          2  char
+        c           2x3                         48  double
+        data       97x2                       1552  double
+        sz          1x2                         16  double
+        v           1x4                         32  double
+
+Total is 259 elements using 1818 bytes
+
+octave:80> v = data(1:10)
+v =
+
+ Columns 1 through 6:
+
+   6.1101   5.5277   8.5186   7.0032   5.8598   8.3829
+
+ Columns 7 through 10:
+
+   7.4764   8.5781   6.4862   5.0546
+
+octave:81> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  ===== 
+        A           3x2                         48  double
+        C           2x3                         48  double
+        I           6x6                         48  double
+        a           1x1                          8  double
+        ans         1x2                         16  double
+        b           1x2                          2  char
+        c           2x3                         48  double
+        data       97x2                       1552  double
+        sz          1x2                         16  double
+        v           1x10                        80  double
+
+Total is 265 elements using 1866 bytes
+
+octave:82> save hello.mat v;
+octave:83> clear
+octave:84> whos
+octave:85> who
+octave:86> load hello.mat
+octave:87> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  ===== 
+        v           1x10                        80  double
+
+Total is 10 elements using 80 bytes
+
+octave:88> v
+v =
+
+ Columns 1 through 6:
+
+   6.1101   5.5277   8.5186   7.0032   5.8598   8.3829
+
+ Columns 7 through 10:
+
+   7.4764   8.5781   6.4862   5.0546
+
+octave:89> save hello.txt v -ascii  % save as text (ASCII)
+octave:90> A = [1 2;3 4;5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:91> A(3,2)
+ans =  6
+octave:92> A(2,:)   % ":" means every element along that row/column
+ans =
+
+   3   4
+
+octave:93> A(:,2)
+ans =
+
+   2
+   4
+   6
+
+octave:94> A([1 3],:)
+ans =
+
+   1   2
+   5   6
+
+octave:95> A(:,2)
+ans =
+
+   2
+   4
+   6
+
+octave:96> A(:,2) = [10;11;12]
+A =
+
+    1   10
+    3   11
+    5   12
+
+octave:97> A = [A,[100;101;102]];
+octave:98> A
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+octave:99> size(A)
+ans =
+
+   3   3
+
+octave:100> A(:)
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+octave:101> A = [1 2;3 4;5 6];
+octave:102> B = [11 12;13 14;15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+octave:103> C = [A B]
+C =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+octave:104> C = [A;B]
+C =
+
+    1    2
+    3    4
+    5    6
+   11   12
+   13   14
+   15   16
+
+octave:105> size(C)
+ans =
+
+   6   2
+
+octave:106> [A B]
+ans =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+octave:107> [A, B]
+ans =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+octave:108> A = [1 2;3 4;5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:109> B = [11 12; 13 14;15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+octave:110> C = [1 1 ;2 2]
+C =
+
+   1   1
+   2   2
+
+octave:111> A*C
+ans =
+
+    5    5
+   11   11
+   17   17
+
+octave:112> A*C    %matrix multiplication
+ans =
+
+    5    5
+   11   11
+   17   17
+
+octave:113> A.*B    %element wise multiplication
+ans =
+
+   11   24
+   39   56
+   75   96
+
+octave:114> A .^ 2
+ans =
+
+    1    4
+    9   16
+   25   36
+
+octave:115> v = [1;2;3]
+v =
+
+   1
+   2
+   3
+
+octave:116> 1 ./ v
+ans =
+
+   1.00000
+   0.50000
+   0.33333
+
+octave:117> 1 ./ A
+ans =
+
+   1.00000   0.50000
+   0.33333   0.25000
+   0.20000   0.16667
+
+octave:118> log(v)
+ans =
+
+   0.00000
+   0.69315
+   1.09861
+
+octave:119> exp(v)
+ans =
+
+    2.7183
+    7.3891
+   20.0855
+
+octave:120> v
+v =
+
+   1
+   2
+   3
+
+octave:121> abs(v)
+ans =
+
+   1
+   2
+   3
+
+octave:122> abs(v) %element wise absolute
+ans =
+
+   1
+   2
+   3
+
+octave:123> abs([-1;2;-3])
+ans =
+
+   1
+   2
+   3
+
+octave:124> -v
+ans =
+
+  -1
+  -2
+  -3
+
+octave:125> -v  %-1*v
+ans =
+
+  -1
+  -2
+  -3
+
+octave:126> v
+v =
+
+   1
+   2
+   3
+
+octave:127> v + ones(length(v),1)
+ans =
+
+   2
+   3
+   4
+
+octave:128> length(v)
+ans =  3
+octave:129> ones(3,1)
+ans =
+
+   1
+   1
+   1
+
+octave:130> v + ones(3,1)
+ans =
+
+   2
+   3
+   4
+
+octave:131> v
+v =
+
+   1
+   2
+   3
+
+octave:132> v + 1
+ans =
+
+   2
+   3
+   4
+
+octave:133> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:134> A'
+ans =
+
+   1   3   5
+   2   4   6
+
+octave:135> (A')'
+ans =
+
+   1   2
+   3   4
+   5   6
+
+octave:136> a = [1 15 2 0.5]
+a =
+
+    1.00000   15.00000    2.00000    0.50000
+
+octave:137> val = max(a)
+val =  15
+octave:138> [val, ind] = max(a)
+val =  15
+ind =  2
+octave:139> max(A)
+ans =
+
+   5   6
+
+octave:140> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:141> a
+a =
+
+    1.00000   15.00000    2.00000    0.50000
+
+octave:142> a < 3    %element wise operation
+ans =
+
+   1   0   1   1
+
+octave:143> find(a < 3)      %tells which elements are true 
+ans =
+
+   1   3   4
+
+octave:144> A = magic(3)
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+octave:145> help magic
+'magic' is a function from the file /usr/local/octave/3.8.0/share/octave/3.8.0/m/special-matrix/magic.m
+
+ -- Function File:  magic (N)
+     Create an N-by-N magic square.  A magic square is an arrangement
+     of the integers `1:n^2' such that the row sums, column sums, and
+     diagonal sums are all equal to the same value.
+
+     Note: N must be greater than 2 for the magic square to exist.
+
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.
+octave:146> [r ,c] = find(A >= 7)     % returns positions of true elements
+r =
+
+   1
+   3
+   2
+
+c =
+
+   1
+   2
+   3
+
+octave:147> A(2,3)
+ans =  7
+octave:148> 
